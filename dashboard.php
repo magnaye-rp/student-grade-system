@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
             <a href="grades.php" class="btn">Manage Grades</a>
             <a href="logout.php" class="btn btn-danger">Logout</a>
         </nav>
+        <!-- added stats section -->
         <div class="stats">
             <div class="stat-card">
                 <h3>Total Students</h3>
@@ -37,6 +38,41 @@ if (!isset($_SESSION['user_id'])) {
                 <p>0</p>
             </div>
         </div>
+        <!-- added recent grades section -->
+         <div class="recent-grades">
+            <h2>Recent Grades</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data -->
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Math 101</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Science 201</td>
+                        <td>B+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+         <!-- added recent courses section -->
+        <div class="recent-courses">
+            <h2>Recent Courses</h2>
+            <ul>
+                <li>Math 101</li>
+                <li>Science 201</li>
+                <li>History 301</li>
+            </ul>
+            
     </div>
     <!-- some changes made -->
 </body>
