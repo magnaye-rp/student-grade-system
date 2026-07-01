@@ -43,6 +43,10 @@ $filteredStudents = array_filter($students, function ($student) use ($search, $c
             <h1>Student Grades</h1>
             <a href="dashboard.php" class="btn">Back to Dashboard</a>
         </header>
+        
+        //Add total student count display
+        <p><strong>Total Students:</strong> <?php echo count($filteredStudents); ?></p>
+
         <table class="grades-table">
             <thead>
                 <tr>
