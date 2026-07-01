@@ -10,6 +10,9 @@ $students = [
     ['id' => 1, 'name' => 'John Doe', 'course' => 'Mathematics', 'grade' => 'A'],
     ['id' => 2, 'name' => 'Jane Smith', 'course' => 'Science', 'grade' => 'B+'],
     ['id' => 3, 'name' => 'Bob Johnson', 'course' => 'English', 'grade' => 'A-'],
+    ['id' => 4, 'name' => 'Alice Brown', 'course' => 'Mathematics', 'grade' => 'B'],
+    ['id' => 5, 'name' => 'Charlie Davis', 'course' => 'Science', 'grade' => 'C+'],
+    
 ];
 
 // Search by name and filter by course
@@ -21,6 +24,8 @@ $filteredStudents = array_filter($students, function ($student) use ($search, $c
     $matchesCourse = $courseFilter === '' || $student['course'] === $courseFilter;
     return $matchesSearch && $matchesCourse;
 });
+
+
 
 ?>
 
