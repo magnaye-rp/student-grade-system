@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             🔒
         </div>
 
-        <h2>Login</h2>
+        <h2>Login Portal</h2>
 
         <?php if (!empty($error)) { ?>
 
@@ -102,6 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             >
                 Show Password
             </button>
+
+
 
             <!-- adding changes here -->
             <div class="forgot">
