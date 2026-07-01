@@ -23,7 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <meta charset="UTF-8">
 
-    <title>Student Grade Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Grade Management System - Login</title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -41,12 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <h2>Login</h2>
 
-        <?php if($error != ""){ ?>
+        <!-- Improved Login Error Message -->
+        <?php if (!empty($error)) { ?>
 
             <div class="error-message">
-
-                <?php echo $error; ?>
-
+                ❌ <strong>Login Failed!</strong><br>
+                <?php echo htmlspecialchars($error); ?>
             </div>
 
         <?php } ?>
@@ -89,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input
                     type="checkbox"
                     id="remember"
+                    name="remember"
                 >
 
                 <label for="remember">
@@ -98,19 +101,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <button type="submit">
-
                 Login
-
             </button>
 
         </form>
 
         <div class="forgot">
-
             <a href="#">
                 Forgot Password?
             </a>
-
         </div>
 
     </div>
