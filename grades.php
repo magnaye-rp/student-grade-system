@@ -12,6 +12,11 @@ $students = [
     ['id' => 3, 'name' => 'Bob Johnson', 'course' => 'English', 'grade' => 'A-'],
     ['id' => 4, 'name' => 'Alice Brown', 'course' => 'Mathematics', 'grade' => 'B'],
     ['id' => 5, 'name' => 'Charlie Davis', 'course' => 'Science', 'grade' => 'C+'],
+    ['id' => 6, 'name' => 'Diana Evans', 'course' => 'English', 'grade' => 'A'],
+    ['id' => 7, 'name' => 'Frank Green', 'course' => 'Mathematics', 'grade' => 'B-'],
+    ['id' => 8, 'name' => 'Grace Harris', 'course' => 'Science', 'grade' => 'A+'],
+    ['id' => 9, 'name' => 'Henry Jackson', 'course' => 'English', 'grade' => 'B'],
+    ['id' => 10, 'name' => 'Ivy King', 'course' => 'Mathematics', 'grade' => 'C'],
     
 ];
 
