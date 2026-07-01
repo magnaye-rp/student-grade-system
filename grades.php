@@ -11,6 +11,16 @@ $students = [
     ['id' => 2, 'name' => 'Jane Smith', 'course' => 'Science', 'grade' => 'B+'],
     ['id' => 3, 'name' => 'Bob Johnson', 'course' => 'English', 'grade' => 'A-'],
 ];
+
+// Find the highest grade
+$highestGrade = $students[0]['grade'];
+
+foreach ($students as $student) {
+    if (strcmp($student['grade'], $highestGrade) < 0) {
+        $highestGrade = $student['grade'];
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
