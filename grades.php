@@ -43,9 +43,28 @@ $filteredStudents = array_filter($students, function ($student) use ($search, $c
             <h1>Student Grades</h1>
             <a href="dashboard.php" class="btn">Back to Dashboard</a>
         </header>
-        
+
         //Add total student count display
         <p><strong>Total Students:</strong> <?php echo count($filteredStudents); ?></p>
+
+        //Add student search and course filter form
+        <form method="GET">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by name"
+        value="<?php echo htmlspecialchars($search); ?>"
+    >
+
+    <select name="course">
+        <option value="">All Courses</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+    </select>
+
+    <button type="submit">Search</button>
+</form>
 
         <table class="grades-table">
             <thead>
