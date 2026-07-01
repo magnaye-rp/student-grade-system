@@ -1,50 +1,122 @@
 <?php
-session_start();
-$error = '';
+$error = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-    
-    // Simple authentication (in real app, use database)
-    if ($username === 'admin' && $password === 'admin123') {
-        $_SESSION['user_id'] = 1;
-        $_SESSION['username'] = 'admin';
-        header('Location: dashboard.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    // Sample Login
+    if ($username == "admin" && $password == "12345") {
+        header("Location: dashboard.php");
         exit();
     } else {
-        $error = 'Invalid username or password';
+        $error = "Incorrect username or password.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Student Grade System</title>
+
+    <title>Student Grade Management System - Login</title>
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="login-form">
-            <h2>Login</h2>
-            <?php if ($error): ?>
-                <div class="error"><?php echo htmlspecialchars($error); ?></div>
-            <?php endif; ?>
-            <form method="POST">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <p class="hint">Default: admin / admin123</p>
+
+<div class="container">
+
+    <div class="login-box">
+
+        <div class="login-icon">
+            🔒
         </div>
+
+        <h2>Login</h2>
+
+        <!-- Improved Login Error Message -->
+        <?php if (!empty($error)) { ?>
+
+            <div class="error-message">
+                ❌ <strong>Login Failed!</strong><br>
+                <?php echo htmlspecialchars($error); ?>
+            </div>
+
+        <?php } ?>
+
+        <form method="POST">
+
+            <label for="username">Username</label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter Username"
+                required
+            >
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter Password"
+                required
+                onkeyup="checkStrength()"
+            >
+
+            <small id="strength"></small>
+
+            <button
+                type="button"
+                class="show-btn"
+                onclick="togglePassword()"
+            >
+                Show Password
+            </button>
+
+            <div class="remember">
+
+                <input
+                    type="checkbox"
+                    id="remember"
+                    name="remember"
+                >
+
+                <label for="remember">
+                    Remember Me
+                </label>
+
+            </div>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <div class="forgot">
+            <a href="#">
+                Forgot Password?
+            </a>
+        </div>
+
     </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
 </body>
 </html>

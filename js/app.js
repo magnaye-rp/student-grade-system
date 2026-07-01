@@ -1,14 +1,53 @@
-// Simple JavaScript functionality for Student Grade System
+function togglePassword(){
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Add any interactive features here
-    console.log('Student Grade System loaded');
-    
-    // Form validation could be added here
-    // AJAX calls for dynamic content could be added here
-});
+    const password=document.getElementById("password");
 
-// Example function for future use
-function confirmDelete(message) {
-    return confirm(message || 'Are you sure you want to delete this item?');
+    if(password.type==="password"){
+
+        password.type="text";
+
+    }else{
+
+        password.type="password";
+
+    }
+
+}
+
+function checkStrength(){
+
+    const password=document.getElementById("password").value;
+
+    const strength=document.getElementById("strength");
+
+    if(password.length==0){
+
+        strength.innerHTML="";
+
+    }
+
+    else if(password.length<6){
+
+        strength.style.color="red";
+
+        strength.innerHTML="Weak Password";
+
+    }
+
+    else if(password.length<10){
+
+        strength.style.color="orange";
+
+        strength.innerHTML="Medium Password";
+
+    }
+
+    else{
+
+        strength.style.color="green";
+
+        strength.innerHTML="Strong Password";
+
+    }
+
 }
