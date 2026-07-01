@@ -10,6 +10,10 @@ $students = [
     ['id' => 1, 'name' => 'John Doe', 'course' => 'Mathematics', 'grade' => 'A'],
     ['id' => 2, 'name' => 'Jane Smith', 'course' => 'Science', 'grade' => 'B+'],
     ['id' => 3, 'name' => 'Bob Johnson', 'course' => 'English', 'grade' => 'A-'],
+    ['id' => 4, 'name' => 'Alice Brown', 'course' => 'History', 'grade' => 'B'],
+    ['id' => 5, 'name' => 'Charlie Davis', 'course' => 'Art', 'grade' => 'A+'],
+    
+
 ];
 ?>
 <!DOCTYPE html>
@@ -36,7 +40,10 @@ $students = [
                     <th>Actions</th>
                 </tr>
             </thead>
+            <!-- added grades.php changes -->
+
             <tbody>
+
                 <?php foreach ($students as $student): ?>
                 <tr>
                     <td><?php echo $student['id']; ?></td>
@@ -48,6 +55,7 @@ $students = [
                         <button class="btn btn-small btn-danger">Delete</button>
                     </td>
                 </tr>
+
                 <?php endforeach; ?>
             </tbody>
         </table>
