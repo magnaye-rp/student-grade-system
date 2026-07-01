@@ -1,5 +1,11 @@
 <?php
+session_start();
+
 $error = "";
+
+if (!isset($_SESSION["login_attempts"])) {
+    $_SESSION["login_attempts"] = 0;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -8,9 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sample Login
     if ($username == "admin" && $password == "12345") {
+
+        $_SESSION["login_attempts"] = 0;
+
         header("Location: dashboard.php");
         exit();
+
     } else {
+
+        $_SESSION["login_attempts"]++;
+
         $error = "Incorrect username or password.";
     }
 }
@@ -43,12 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <h2>Login</h2>
 
-        <!-- Improved Login Error Message -->
         <?php if (!empty($error)) { ?>
 
             <div class="error-message">
                 ❌ <strong>Login Failed!</strong><br>
                 <?php echo htmlspecialchars($error); ?>
+            </div>
+
+            <div class="attempt-message">
+                Login Attempts:
+                <strong><?php echo $_SESSION["login_attempts"]; ?></strong>
             </div>
 
         <?php } ?>
