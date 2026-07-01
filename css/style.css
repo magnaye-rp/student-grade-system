@@ -189,5 +189,13 @@ button:hover{
     width:90%;
 
 }
+button {
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
 
 }
