@@ -103,6 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Show Password
             </button>
 
+            <!-- adding changes here -->
+            <div class="forgot">
+                <a href="#">
+                    Forgot Password?
+                </a>
+            </div>
+
             <div class="remember">
 
                 <input
