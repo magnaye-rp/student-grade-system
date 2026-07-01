@@ -36,6 +36,12 @@ foreach ($students as $student) {
             <h1>Student Grades</h1>
             <a href="dashboard.php" class="btn">Back to Dashboard</a>
         </header>
+        
+        //Display the highest grade
+        <div class="highest-grade">
+            <strong>🏆 Highest Grade:</strong> <?php echo $highestGrade; ?>
+        </div>
+
         <table class="grades-table">
             <thead>
                 <tr>
