@@ -23,5 +23,6 @@ if (isset($_SESSION['user_id'])) {
             <a href="login.php" class="btn btn-primary">Login</a>
         </div>
     </div>
+    <!-- added index changes -->
 </body>
 </html>
